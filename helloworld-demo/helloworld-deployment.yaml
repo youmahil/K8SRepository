@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
       - name: my-helloworld-test
-        image: yaongdocker/yaong-hello-world:0.1.1
+        image: yaongdocker/yaong-hello-world:0.1.2
         ports:
         - containerPort: 9090
