@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-helloworld-test
+spec:
+  selector:
+    matchLabels:
+      whatCat: my-helloworld-test
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        whatCat: my-helloworld-test
+    spec:
+      containers:
+      - name: my-helloworld-test
+        image: yaongdocker/yaong-hello-world:0.1.0
+        ports:
+        - containerPort: 9090
