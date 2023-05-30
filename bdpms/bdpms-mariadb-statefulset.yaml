@@ -1,0 +1,46 @@
+# bdpms-mariadb StatefulSet
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: sts-bdpms-mariadb
+  namespace: ns-bdpms
+spec:
+  serviceName: svc-bdpms-mariadb
+  replicas: 1
+  selector:
+    matchLabels:
+      whatCat: bdpms-mariadb
+  template:
+    metadata:
+      labels:
+        whatCat: bdpms-mariadb
+    spec:
+      containers:
+      - name: ctn-bdpms-mariadb
+        image: yaongdocker/bdpms-mariadb:0.1
+        ports:
+          - name: dbms-port
+            containerPort: 3306
+        volumeMounts:
+          - name: vol-mariadb
+            mountPath: /var/lib/mysql          
+      volumes:         
+        - name: vol-mariadb
+          hostPath:
+            path: /mnt/hgfs/vmshare/bdpms-data
+            type: Directory
+
+---
+# bdpms-mariadb Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-bdpms-mariadb
+  namespace: ns-bdpms
+spec:
+  type: NodePort
+  ports:
+    - port: 3306
+      targetPort: 3306
+  selector:
+    whatCat: bdpms-mariadb

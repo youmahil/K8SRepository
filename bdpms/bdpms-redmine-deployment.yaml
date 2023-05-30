@@ -1,0 +1,45 @@
+# bdpms-redmine Deployment - Edited VSCode
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dep-bdpms-redmine
+  namespace: ns-bdpms
+  labels:
+    whatCat: bdpms-redmine  
+spec:
+  selector:
+    matchLabels:
+      whatCat: bdpms-redmine
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        whatCat: bdpms-redmine
+    spec:
+      containers:
+      - name: ctn-bdpms-redmine
+        image: yaongdocker/bdpms-redmine:0.1
+        ports:
+          - name: http-port
+            containerPort: 3000
+        resources:
+          limits:
+            memory: 512Mi
+            cpu: "1"
+        requests:
+          memory: 256Mi
+          cpu: "0.2"
+---
+# bdpms-redmine Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-bdpms-redmine
+  namespace: ns-bdpms
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 3000
+      targetPort: 13000
+  selector:
+    whatCat: bdpms-redmine
