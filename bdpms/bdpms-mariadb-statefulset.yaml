@@ -27,7 +27,7 @@ spec:
       volumes:         
         - name: vol-mariadb
           hostPath:
-            path: /mnt/hgfs/vmshare/bdpms-data
+            path: /mnt/hgfs/vmshare/bdpms-data/mysqldata
             type: Directory
 
 ---
