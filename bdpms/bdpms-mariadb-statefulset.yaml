@@ -29,8 +29,6 @@ spec:
           hostPath:
             path: /mnt/hgfs/vmshare/bdpms-data/mysqldata
             type: Directory
-      securityContext:
-        privileged: true
 ---
 # bdpms-mariadb Service
 apiVersion: v1
