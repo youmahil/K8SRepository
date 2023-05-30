@@ -1,4 +1,4 @@
-# helloworld-demo Deployment
+# helloworld-demo Deployment - Edited VSCode
 apiVersion: apps/v1
 kind: Deployment
 metadata:
