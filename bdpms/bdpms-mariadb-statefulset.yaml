@@ -15,6 +15,13 @@ spec:
       labels:
         whatCat: bdpms-mariadb
     spec:
+      initContainers:
+      - name: ctn-bdpms-mariadb-init
+        command: ['sh', '-c', 'chmod 755 /run/mysqld -R']
+        image: yaongdocker/bdpms-mariadb:0.1
+        volumeMounts:
+          - name: vol-mariadb
+            mountPath: /var/lib/mysql
       containers:
       - name: ctn-bdpms-mariadb
         image: yaongdocker/bdpms-mariadb:0.1
