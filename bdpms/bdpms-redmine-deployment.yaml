@@ -16,14 +16,9 @@ spec:
       labels:
         whatCat: bdpms-redmine
     spec:
-      initContainers:
-      - name: ctn-bdpms-redmine-init
-        command: ["/bin/sh"]
-        args: ["-c","sed  -i 's/192.168.55.174/svc-bdpms-mariadb/g'  /usr/src/redmine/config/database.yml "]
-        image: yaongdocker/bdpms-redmine:0.1
       containers:
       - name: ctn-bdpms-redmine
-        image: yaongdocker/bdpms-redmine:0.1
+        image: yaongdocker/bdpms-redmine:0.2
         ports:
           - name: http-port
             containerPort: 3000
