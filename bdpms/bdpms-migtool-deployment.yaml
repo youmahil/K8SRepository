@@ -36,8 +36,7 @@ metadata:
 spec:
   type: NodePort
   ports:
-    - nodePort: 18080
-      port: 8080
-      protocol: TCP
+    - port: 18080
+      targetPort: 8080
   selector:
     whatCat: bdpms-migtool

@@ -40,10 +40,9 @@ metadata:
   name: svc-bdpms-mariadb
   namespace: ns-bdpms
 spec:
-  type: NodePort
   ports:
-    - nodePort: 3306
-      port: 3306
-      protocol: TCP
+    - port: 3306
+      name: mariadb-port
+  clusterIP: None
   selector:
     whatCat: bdpms-mariadb
