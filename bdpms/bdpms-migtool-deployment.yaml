@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: ctn-bdpms-migtool
-        image: yaongdocker/bdpms-migtool:0.1
+        image: yaongdocker/bdpms-migtool:0.2
         ports:
           - name: http-port
             containerPort: 8080
