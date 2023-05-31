@@ -34,9 +34,10 @@ metadata:
   name: svc-bdpms-migtool
   namespace: ns-bdpms
 spec:
-  type: LoadBalancer
+  type: NodePort
   ports:
-    - port: 8080
-      targetPort: 18080
+    - nodePort: 18080
+      port: 8080
+      protocol: TCP
   selector:
     whatCat: bdpms-migtool
