@@ -20,7 +20,7 @@ spec:
         image: yaongdocker/bdpms-mariadb:0.1
         securityContext:
           runAsUser: 1000
-          allowPrivilegeEscalation: false
+          #allowPrivilegeEscalation: false
         ports:
           - name: dbms-port
             containerPort: 3306
