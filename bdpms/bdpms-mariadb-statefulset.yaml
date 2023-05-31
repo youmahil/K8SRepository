@@ -18,6 +18,9 @@ spec:
       containers:
       - name: ctn-bdpms-mariadb
         image: yaongdocker/bdpms-mariadb:0.1
+        securityContext:
+          runAsUser: 1001
+          allowPrivilegeEscalation: false
         ports:
           - name: dbms-port
             containerPort: 3306
