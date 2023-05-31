@@ -17,7 +17,7 @@ spec:
     spec:
       initContainers:
       - name: ctn-bdpms-mariadb-init
-        command: ['sh', '-c', 'chmod 755 /run/mysqld -R']
+        command: ['sh', '-c', 'echo CHMOD ; chmod 755 /run/mysqld -R ; ls -laF /run/mysqld']
         image: yaongdocker/bdpms-mariadb:0.1
         volumeMounts:
           - name: vol-mariadb
