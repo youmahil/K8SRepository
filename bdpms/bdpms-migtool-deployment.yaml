@@ -26,6 +26,9 @@ spec:
           limits:
             memory: 512Mi
             cpu: "1"
+        env:
+          - name: BDPMS_DB_PORT
+            value: "3306"
 ---
 # bdpms-migtool Service
 apiVersion: v1
