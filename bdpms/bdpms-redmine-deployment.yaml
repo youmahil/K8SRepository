@@ -35,7 +35,7 @@ spec:
             value: "redmine" 
           - name: REDMINE_DB_PASSWORD
             value: "admin"
-        command: [ "/bin/sh" , "-ec" , "while:; do echo 'hello kitty'; sleep 5; done " ]                                            
+        command: [ "/bin/sh" , "-ec" , "while true; do echo 'hello kitty'; sleep 5; done" ]                                            
 ---
 # bdpms-redmine Service
 apiVersion: v1
