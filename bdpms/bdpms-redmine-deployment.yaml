@@ -22,6 +22,10 @@ spec:
         ports:
           - name: http-port
             containerPort: 3000
+        resources:
+          limits:
+            memory: 512Mi
+            cpu: "1"
         env:
           - name: REDMINE_DB_HOST
             value: "svc-bdpms-mariadb"
@@ -30,7 +34,8 @@ spec:
           - name: REDMINE_DB_DATABASE
             value: "redmine" 
           - name: REDMINE_DB_PASSWORD
-            value: "admin"                                            
+            value: "admin"
+        command: [ "/bin/sh" , "-ec" , "while:; do echo 'hello kitty'; sleep 5; done " ]                                            
 ---
 # bdpms-redmine Service
 apiVersion: v1
