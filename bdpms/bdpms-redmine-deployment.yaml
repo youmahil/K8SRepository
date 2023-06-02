@@ -35,7 +35,7 @@ spec:
             value: "redmine" 
           - name: REDMINE_DB_PASSWORD
             value: "admin"
-        #command: [ "/usr/local/bin/ruby bin/rails server -b 0.0.0.0" ]                                            
+        command: [ "/bin/bash" , "/docker-entrypoint.sh" ]                                            
 ---
 # bdpms-redmine Service
 apiVersion: v1
