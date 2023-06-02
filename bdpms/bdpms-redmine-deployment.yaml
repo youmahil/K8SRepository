@@ -22,10 +22,10 @@ spec:
         ports:
           - name: http-port
             containerPort: 3000
-        resources:
-          limits:
-            memory: 512Mi
-            cpu: "1"
+        #resources:
+        #  limits:
+        #    memory: 512Mi
+        #    cpu: "1"
         env:
           - name: REDMINE_DB_MYSQL
             value: "svc-bdpms-mariadb"
