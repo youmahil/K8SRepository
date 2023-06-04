@@ -24,7 +24,7 @@ spec:
             containerPort: 3000
         resources:
           limits:
-            memory: 2Gi
+            memory: 1Gi
             cpu: "1"
         env:
           - name: REDMINE_DB_HOST
