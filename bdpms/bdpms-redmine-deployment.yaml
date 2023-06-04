@@ -27,7 +27,7 @@ spec:
         #    memory: 512Mi
         #    cpu: "1"
         env:
-          - name: REDMINE_DB_MYSQL
+          - name: REDMINE_DB_HOST
             value: "svc-bdpms-mariadb"
           - name: REDMINE_DB_PORT
             value: "3306" 
