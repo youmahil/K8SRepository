@@ -19,7 +19,7 @@ spec:
       containers:
       - name: ctn-bdpms-redmine
         #image: yaongdocker/bdpms-redmine:0.2
-        image: 172.16.201.133:30099/v2/bdpms-redmine:0.2
+        image: 172.16.201.133:30099/bdpms-redmine:0.2
         ports:
           - name: http-port
             containerPort: 3000
