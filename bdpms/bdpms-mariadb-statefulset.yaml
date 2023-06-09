@@ -17,21 +17,13 @@ spec:
     spec:
       containers:
       - name: ctn-bdpms-mariadb
-        image: mariadb
+        image: yaongdocker/bdpms-mariadb:0.2
         securityContext:
           runAsUser: 1000
           #allowPrivilegeEscalation: false
         ports:
           - name: dbms-port
             containerPort: 3306
-        volumeMounts:
-          - name: vol-mariadb
-            mountPath: /var/lib/mysql          
-      volumes:         
-        - name: vol-mariadb
-          hostPath:
-            path: /mnt/hgfs/vmshare/bdpms-data/mysqldata
-            type: Directory
 ---
 # bdpms-mariadb Service
 apiVersion: v1

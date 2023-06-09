@@ -19,8 +19,6 @@ spec:
       containers:
       - name: ctn-bdpms-redmine
         image: yaongdocker/bdpms-redmine:0.2
-        # recreate image
-        #image: 172.16.201.133:30099/bdpms-redmine:0.2
         imagePullPolicy: Always
         ports:
           - name: http-port

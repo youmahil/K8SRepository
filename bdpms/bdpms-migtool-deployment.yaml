@@ -27,6 +27,8 @@ spec:
             memory: 512Mi
             cpu: "1"
         env:
+          - name: BDPMS_DB_HOST
+            value: "svc-bdpms-mariadb"        
           - name: BDPMS_DB_PORT
             value: "3306"
 ---
