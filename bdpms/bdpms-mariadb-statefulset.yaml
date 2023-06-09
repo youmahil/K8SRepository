@@ -18,6 +18,7 @@ spec:
       containers:
       - name: ctn-bdpms-mariadb
         image: yaongdocker/bdpms-mariadb:0.2
+        imagePullPolicy: Always
         securityContext:
           runAsUser: 1000
           #allowPrivilegeEscalation: false
