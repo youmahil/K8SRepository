@@ -46,7 +46,8 @@ metadata:
 spec:
   type: NodePort
   ports:
-    - port: 13000
+    - nodePort: 33000
+      port: 3000
       targetPort: 3000
   selector:
     whatCat: bdpms-redmine
